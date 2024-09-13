@@ -9,12 +9,12 @@ class Compte
      * Titulaire du compte
      * @var string
      */
-    public string $titulaire;
+    private string $titulaire;
 
     /**
      * @var float|int
      */
-    public float|int $solde;
+    private float|int $solde;
 
     /**
      * @param string $titulaire
@@ -24,6 +24,20 @@ class Compte
     {
       $this->titulaire = $titulaire;
       $this->solde = $solde;
+    }
+
+    /**
+     * Getter de Titutlaire
+     * @return string
+     */
+    public function getTitulaire(): string
+    {
+        return $this->titulaire;
+    }
+
+    public function setTitulaire(string $titulaire): void
+    {
+        $this->titulaire = $titulaire;
     }
 
     /**
@@ -58,4 +72,5 @@ class Compte
             echo "Le montant invalide ou solde insuffisant";
         }
     }
+
 }
