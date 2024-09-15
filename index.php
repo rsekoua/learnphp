@@ -1,11 +1,16 @@
 <?php
-require_once 'classes/Compte.php';
 
 
-$compte1 = new Compte('Benoit', 1000);
+use App\Autoloader;
+use App\Banque\CompteCourant;
+
+require "classes/Autoloader.php";
+Autoloader::register();
+
+$compte1 = New CompteCourant("Benoit", 1000,500);
 
 
-echo '<pre>';
-var_dump($compte1->getTitulaire());
-echo '</pre>';
 
+echo "<pre>";
+var_dump($compte1);
+echo "</pre>";
